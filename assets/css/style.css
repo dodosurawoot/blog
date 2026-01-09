@@ -481,62 +481,66 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Resume Cards
+--------------------------------------------------------------*/
+.resume .resume-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* Very subtle shadow initially */
+  border-left: 5px solid var(--primary-color);
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.resume .resume-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 20px;
-  color: #050d18;
+  color: var(--heading-color);
 }
 
 .resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  padding: 0;
+  margin: 0;
+  border-left: none;
+  /* Remove old border */
   position: relative;
 }
 
 .resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
+  line-height: 1.2;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
-  font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
+  font-size: 14px;
+  background: #eef2ff;
+  color: var(--primary-color);
+  padding: 6px 12px;
   display: inline-block;
   font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
-  padding-left: 20px;
-}
-
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-  padding-bottom: 0;
+  margin-bottom: 12px;
+  border-radius: 20px;
 }
 
 .resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: #fff;
-  border: 2px solid #1f5297;
+  display: none;
+  /* Remove old dot */
 }
 
 /*--------------------------------------------------------------
@@ -1145,4 +1149,36 @@ section {
 #portfolio-flters li[data-filter=".filter-travel"],
 .portfolio-item.filter-travel {
   display: none !important;
+}
+
+/*--------------------------------------------------------------
+# Resume Button
+--------------------------------------------------------------*/
+.btn-resume {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  border: none;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+.btn-resume:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+  color: #fff;
+  background: linear-gradient(135deg, #4f46e5, #0d9488);
+}
+
+.btn-resume i {
+  font-size: 18px;
 }
