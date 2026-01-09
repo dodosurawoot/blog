@@ -2,653 +2,375 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surawoot | System Engineer</title>
 
-  <title>Surawoot Portfolio</title>
-  <meta
-    content="Portfolio of Surawoot Krajangthong, a Senior VoIP and System Engineer specializing in Linux, Cloud Telephony, and VMware."
-    name="description">
-  <meta
-    content="Surawoot Krajangthong, VoIP Engineer, Linux Engineer, System Engineer, Cloud Engineer, 3CX, Genesys, VMware, Portfolio"
-    name="keywords">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/Dodo-profile2.png" alt="" class="img-fluid ">
-        <h1 class="text-center justify-content-center"><a href="index.html">Surawoot Krajangthong</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.linkedin.com/in/k-surawoot/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/dodosurawoot" class="github"><i class="bx bxl-github"></i></a>
-          <a href="https://gitlab.com/dodosurawoot" class="gitlab"><i class="bx bxl-gitlab"></i></a>
+  <!-- Navigation -->
+  <nav class="nav-glass">
+    <div class="container" style="display:flex; justify-content:space-between; width:100%;">
+      <a href="#" class="nav-logo"><i class="bi bi-laptop"></i> Surawoot.</a>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div class="nav-links">
+          <a href="#about" data-i18n="nav_about">About</a>
+          <a href="#experience" data-i18n="nav_exp">Experience</a>
+          <a href="#skills" data-i18n="nav_skills">Skills</a>
+          <a href="#contact" data-i18n="nav_contact">Contact</a>
         </div>
-      </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About Me</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Work
-                Experience</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-              <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+        <!-- Language Switch -->
+        <button id="langBtn" class="lang-btn" aria-label="Switch Language">
+          <span class="flag-icon flag-us"></span>
+          <span class="flag-icon flag-th"></span>
+        </button>
+      </div>
     </div>
-  </header><!-- End Header -->
+  </nav>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Surawoot Krajangthong</h1>
-      <p> I'm <span class="typed" data-typed-items="VoIP Engineer, Linux/Unix Engineer, System/Cloud Engineer"></span>
-      </p>
-    </div>
-  </section><!-- End Hero -->
+  <main>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-up">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 justify-content-center" data-aos="fade-right">
-            <img src="assets/img/Dodo-profile2.png" class="img-fluid justify-content-center" alt="">
-            <div class="section-title">
-              <h2>About me</h2>
-              <div class="p-3 bg-light rounded-3 border-start border-4 border-primary">
-                <p class="fst-italic mb-0" style="line-height: 1.8;">
-                  "Hi! I'm <strong>Surawoot Krajangthong</strong>, also known as Dodo. I bring over <strong>8
-                    years</strong> of experience as a seasoned
-                  professional specializing in <span class="text-primary">Linux, Cloud Telephony, and VMware</span>. I
-                  am proficient in 3CX and Genesys,
-                  with skills encompassing Bash, SQL, Golang, and cloud technologies such as Amazon S3, Docker, openVAS,
-                  and openVPN."
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>VoIP | Network | Cloud Engineer &amp; System Engineer.</h3>
-            <p class="fst-italic">
-              Enhance and invigorate through innovation and motivation.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>24 March 1995</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>School:</strong> <span>KMUTT</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+66 840 955 107</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Bangkok, Thailand</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span id="Age"></span></li>
-                  <script>document.getElementById("Age").textContent = new Date().getFullYear() - 1995;</script>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>Dodosurawoot@outlook.com</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            <div class="mt-4">
-              <h3 class="resume-title"
-                style="font-size: 22px; color: var(--heading-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; display: inline-block;">
-                Education</h3>
-              <div class="d-flex align-items-start mt-3">
-                <div class="icon-box me-3">
-                  <i class="bi bi-mortarboard-fill text-primary" style="font-size: 32px;"></i>
-                </div>
-                <div>
-                  <h4 style="font-size: 18px; font-weight: 700; color: var(--heading-color); margin-bottom: 5px;">
-                    Bachelor of Engineering</h4>
-                  <h5 style="font-size: 16px; color: var(--primary-color); margin-bottom: 8px;">Electronic and
-                    Telecommunication</h5>
-                  <p class="mb-1"><em>King Mongkut's University of Technology Thonburi, Bangkok, Thailand</em></p>
-                  <span class="badge bg-light text-dark border">Aug 2013 – Jan 2017</span>
-                  <p class="mt-2 text-muted" style="font-size: 14px;">Activities: ABU Robocon 2015</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>Professional with 4+ years in Linux, cloud telephony, and VMware. Expert in 3CX and Genesys. Skilled in
-            Bash, SQL, Golang, and cloud tech like Amazon S3, Docker, openVAS and openVPN</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title mt-0">Infrastructure & Cloud</h3>
-            <div class="d-flex flex-wrap gap-2 mb-4">
-              <span class="skill-tag">Linux/Unix</span>
-              <span class="skill-tag">VMware</span>
-              <span class="skill-tag">Proxmox</span>
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">Azure</span>
-              <span class="skill-tag">Huawei Cloud</span>
-              <span class="skill-tag">Docker</span>
-            </div>
-
-            <h3 class="resume-title">Telephony</h3>
-            <div class="d-flex flex-wrap gap-2 mb-4">
-              <span class="skill-tag">3CX</span>
-              <span class="skill-tag">Asterisk</span>
-              <span class="skill-tag">PBX</span>
-              <span class="skill-tag">Genesys</span>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title mt-0">Development & Scripting</h3>
-            <div class="d-flex flex-wrap gap-2 mb-4">
-              <span class="skill-tag">Bash Script</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">Golang</span>
-            </div>
-
-            <h3 class="resume-title">Network & Others</h3>
-            <div class="d-flex flex-wrap gap-2 mb-4">
-              <span class="skill-tag">Network/Firewall</span>
-              <span class="skill-tag">OpenVPN</span>
-              <span class="skill-tag">OpenVAS</span>
-              <span class="skill-tag">English Communication</span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Work Experience</h2>
-          <p>I am a seasoned professional with over 3 years of experience, possessing a strong background in Linux
-            operating systems, cloud telephony, and VMware technologies. My expertise extends to 3CX and its call flow
-            designer, ensuring seamless communication solutions for businesses. I also bring valuable experience with
-            Avaya UC (Unified Communications) and Genesys contact center solutions, further enhancing my proficiency in
-            delivering comprehensive communication strategies. In addition, I have a solid foundation in Bash scripting,
-            SQL (Structured Query Language), and Golang, contributing to a diverse skill set that strengthens my ability
-            to address various technical challenges. Additionally, I am well-versed in cloud technologies, including
-            Amazon S3 object storage, Docker, openVAS, and openVPN.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-
-            <div class="timeline">
-
-              <!-- Summary Item -->
-              <div class="timeline-item left">
-                <i class="bi bi-person-lines-fill timeline-icon"></i>
-                <div class="timeline-content">
-                  <span class="date">Summary</span>
-                  <h2>Surawoot Krajangthong</h2>
-                  <p><em>Experienced professional with over 3 years in Linux, cloud telephony, and VMware technologies.
-                      Specialized in 3CX and Avaya UC, with proficiency in Genesys contact center solutions. Skilled in
-                      Bash scripting, SQL, and Golang, complemented by a strong foundation in cloud technologies.</em>
-                  </p>
-                  <ul class="mt-3">
-                    <li>Huay Kwang, Bangkok, Thailand</li>
-                    <li>(66) 840 955 107</li>
-                    <li>Dodosurawoot@outlook.com</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Experience Items -->
-              <div class="timeline-item right">
-                <i class="bi bi-briefcase-fill timeline-icon"></i>
-                <div class="timeline-content">
-                  <span class="date">Apr 2025 – Present</span>
-                  <h2>Senior System Engineer</h2>
-                  <h4>Cloudsoft Co., Ltd.</h4>
-                  <ul>
-                    <li>Design and support unified communications solutions using 3CX and cloud telephony platforms.
-                    </li>
-                    <li>Lead integration of PBX systems with enterprise applications and oversee virtualisation and
-                      cloud infrastructure.</li>
-                    <li>Collaborate with cross-functional teams to enhance system performance and reliability, providing
-                      technical guidance and troubleshooting.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="timeline-item right">
-                <i class="bi bi-briefcase-fill timeline-icon"></i>
-                <div class="timeline-content">
-                  <span class="date">Oct 2021 – Apr 2025</span>
-                  <h2>Network/System Engineer</h2>
-                  <h4>Cloudsoft Co., Ltd.</h4>
-                  <ul>
-                    <li>Led IVR testing and orchestrated development and implementation of call-flow solutions.</li>
-                    <li>Oversaw integration of Salesforce with communication systems and maintained thorough
-                      documentation (FSD/TSD).</li>
-                    <li>Reduced 3CX PBX server deployment time from 5 hours to 10 minutes using an optimized Bash
-                      script.</li>
-                    <li>Integrated legacy PBX systems with 3CX PBX, Cisco CUCM, Asterisk and Genesys to improve
-                      interoperability.</li>
-                    <li>Analysed SIP packets and troubleshot network and firewall issues to optimize communication
-                      systems.</li>
-                    <li>Researched and developed solutions to enhance PBX reliability for large contact centres.</li>
-                    <li>Conducted training sessions for clients and operations teams on PBX functionality.</li>
-                    <li>Managed projects and coordinated with vendors and clients to ensure successful deployments.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="timeline-item left">
-                <i class="bi bi-briefcase-fill timeline-icon"></i>
-                <div class="timeline-content">
-                  <span class="date">Oct 2020 – Aug 2021</span>
-                  <h2>Support Network Engineer (NOC)</h2>
-                  <h4>Kirz Co., Ltd.</h4>
-                  <ul>
-                    <li>Monitored network operations and supported enterprise network infrastructure to maintain high
-                      availability and performance.</li>
-                    <li>Assisted in diagnosing and resolving network issues within the Network Operations Centre and
-                      coordinated with cross-functional teams to ensure service continuity.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="timeline-item right">
-                <i class="bi bi-briefcase-fill timeline-icon"></i>
-                <div class="timeline-content">
-                  <span class="date">Feb 2020 – Aug 2020</span>
-                  <h2>Network Engineer</h2>
-                  <h4>Axtentel IT Hardware Maintenance</h4>
-                  <ul>
-                    <li>Managed network infrastructure and maintenance for IT hardware, ensuring smooth operations for
-                      clients.</li>
-                    <li>Supported hardware upgrades and troubleshooting within telecommunications environments.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="timeline-item left">
-                <i class="bi bi-briefcase-fill timeline-icon"></i>
-                <div class="timeline-content">
-                  <span class="date">Nov 2019 – Feb 2020</span>
-                  <h2>Junior Network Engineer</h2>
-                  <h4>Axtentel IT Hardware Maintenance</h4>
-                  <ul>
-                    <li>Assisted senior engineers in network maintenance and deployment tasks.</li>
-                    <li>Gained hands-on experience with network hardware and troubleshooting techniques.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="timeline-item right">
-                <i class="bi bi-briefcase-fill timeline-icon"></i>
-                <div class="timeline-content">
-                  <span class="date">Oct 2018 – Dec 2019</span>
-                  <h2>Support RF Engineer</h2>
-                  <h4>Ericsson</h4>
-                  <ul>
-                    <li>Performed 3G/4G network optimisation including MIMO, FDD and TDD technologies.</li>
-                    <li>Supported installation of cellular sites and collaborated with DTAC to ensure optimal network
-                      performance.</li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="assets/doc/resume_surawoot_krajangthong.pdf" class="btn-resume" target="_blank"><i
-            class="bi bi-download"></i> Download Resume</a>
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p> I have actively pursued extensive training in various courses related to the 3CX system, demonstrating a
-            keen commitment to continuous learning and skill development.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-between">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-cert">Certificate</li>
-              <li data-filter=".filter-work">Work</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cert">
-            <div class="portfolio-wrap">
-              <img src="assets/img/certificate/Cert-1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/certificate/Cert-1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="3CX Advanced Certified Engineer V18"><i class="bx bx-plus"></i></a>
-                <a href="https://portal.3cx.com/partner/certification" title="More Details"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cert">
-            <div class="portfolio-wrap">
-              <img src="assets/img/certificate/Cert-5.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/certificate/Cert-5.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Basic 3CX"><i class="bx bx-plus"></i></a>
-                <a href="https://portal.3cx.com/partner/certification" title="More Details"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cert">
-            <div class="portfolio-wrap">
-              <img src="assets/img/certificate/Cert-2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/certificate/Cert-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="CompTIA Network+"><i class="bx bx-plus"></i></a>
-                <a href="https://www.linkedin.com/learning/certificates/c872258509c54493559ceadf2684805d20a715ee27879535bd03934e626bd70f?trk=backfilled_certificate"
-                  title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cert">
-            <div class="portfolio-wrap">
-              <img src="assets/img/certificate/Cert-3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/certificate/Cert-3.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Python learning"><i class="bx bx-plus"></i></a>
-                <a href="https://www.linkedin.com/learning/certificates/012b8e80302ea9edb635747c4d7bd57c8d30a5e8cb3ab7bdf76ae827bdcd8315?trk=backfilled_certificate"
-                  title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cert">
-            <div class="portfolio-wrap">
-              <img src="assets/img/certificate/Cert-4.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/certificate/Cert-4.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="SQL learning"><i class="bx bx-plus"></i></a>
-                <a href="https://www.linkedin.com/learning/certificates/37757dc54523c1316053c4c17856435fa69d42dc47c060f288a7401457eaf5ea?trk=backfilled_certificate"
-                  title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-work">
-            <div class="portfolio-wrap">
-              <img src="assets/img/work/work-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/work/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="implementation PBX server"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-work">
-            <div class="portfolio-wrap">
-              <img src="assets/img/work/work-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/work/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Installation server"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-travel">
-            <div class="portfolio-wrap">
-              <img src="assets/img/travel/Image.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/travel/Image.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mt.Fuji, Japan"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-travel">
-            <div class="portfolio-wrap">
-              <img src="assets/img/travel/Image (1).jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/travel/Image (1).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Hanoi, Vietnam"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-travel">
-            <div class="portfolio-wrap">
-              <img src="assets/img/travel/Image (2).jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/travel/Image (2).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Chiangmai, Thailand"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-travel">
-            <div class="portfolio-wrap">
-              <img src="assets/img/travel/Image (3).jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/travel/Image (3).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tokyo, Japan"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-travel">
-            <div class="portfolio-wrap">
-              <img src="assets/img/travel/Image (4).jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/travel/Image (4).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Krabi, Thailand"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-travel">
-            <div class="portfolio-wrap">
-              <img src="assets/img/travel/Image (5).jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/travel/Image (5).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Osaka, Japan"><i class="bx bx-plus"></i></a>
-                <a href="" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-        </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>In my capacity as a temporary employee, I specialize in offering a range of services encompassing software
-            testing, VMware implementation, IVR (Interactive Voice Response) configuration, firewall setup, and SQL
-            testing. My expertise lies in ensuring the smooth operation of software through meticulous testing
-            procedures. I possess proficiency in implementing VMware solutions, skill in configuring IVR systems to
-            optimize communication processes, expertise in establishing and managing networking firewalls for heightened
-            security, and a knack for conducting thorough SQL testing to validate database functionality. My dedication
-            to precision and efficiency positions me as a valuable contributor in delivering exemplary performance
-            across these crucial domains..</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-search"></i></div>
-            <h4 class="title"><a href="">Software Testing</a></h4>
-            <p class="description">Experienced in software testing using the Postman API tool, adept at creating and
-              executing test cases. Proficient in summarizing defects using Jira for clear communication and efficient
-              issue resolution.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-tools"></i></div>
-            <h4 class="title"><a href="">Linux Unix</a></h4>
-            <p class="description">Experienced in Linux implementation with advanced proficiency in optimizing
-              performance through skillful use of Bash scripting.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-cloud-lightning"></i></div>
-            <h4 class="title"><a href="">VMware Cloud</a></h4>
-            <p class="description">Experienced in VMware Workstation and cloud implementation, adept at delivering
-              tailored solutions to meet client needs for seamless and efficient operations.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-hdd-network"></i></div>
-            <h4 class="title"><a href="">Network Firewall</a></h4>
-            <p class="description">Experienced in network firewall implementation with expertise in Cisco and Fortinet
-              products.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-telephone-inbound"></i></div>
-            <h4 class="title"><a href="">PBX implementation</a></h4>
-            <p class="description">Experienced in IVR configuration, design, and developing call flows to support
-              diverse business needs.</p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>With a specialized proficiency in PBX integration within the telecom industry, I offer a commitment to
-            collaborative success. My approach involves overcoming challenges and delivering tailored solutions to
-            address your unique needs. Beyond technical expertise, I am dedicated to comprehending and fulfilling your
-            specific objectives. Let's connect and turn your goals into reality.</p>
-        </div>
-
-        <div class="row gy-4" data-aos="fade-in">
-          <!-- Info card -->
-          <div class="col-lg-5 d-flex align-items-stretch justify-content-evenly">
-            <div class="info w-100">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p><a href="https://www.google.com/maps/place/Huay+Khwang,+Bangkok,+Thailand+10310" target="_blank">Huay
-                    Khwang, Bangkok, Thailand 10310</a></p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p><a href="mailto:dodosurawoot@outlook.com">dodosurawoot@outlook.com</a></p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p><a href="tel:+66840955107">+66 840-955-107</a></p>
-              </div>
-
-              <div class="chat">
-                <i class="bi bi-linkedin"></i>
-                <h4>Direct meessage:</h4>
-                <p><a href="https://www.linkedin.com/in/k-surawoot/">k-surawoot</a></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Map -->
-          <div class="col-lg-7">
-            <div class="ratio ratio-4x3">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62001.81703652416!2d100.54241679708772!3d13.772024425034255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e7a2ede9915%3A0x30100b25de24e90!2z4LmA4LiC4LiV4Lir4LmJ4Lin4Lii4LiC4Lin4Liy4LiHIOC4geC4o-C4uOC4h-C5gOC4l-C4nuC4oeC4q-C4suC4meC4hOC4oyAxMDMxMA!5e0!3m2!1sth!2sth!4v1700075852325!5m2!1sth!2sth"
-                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
+        <h1 data-i18n="hero_title">VoIP, Linux & <br>Cloud Engineering.</h1>
+        <p style="max-width: 700px; margin: 0 auto 32px; color: var(--text-secondary); line-height: 1.6;"
+          data-i18n="hero_desc">Hi, I'm Surawoot (Dodo). I’m a passionate System Engineer dedicated to crafting seamless
+          communication ecosystems. From robust VoIP solutions to scalable cloud infrastructure, I engineer systems that
+          are built to perform and designed to scale.</p>
+        <div class="hero-btns">
+          <a href="#experience" class="btn btn-primary" data-i18n="btn_work">My Work</a>
+          <a href="assets/doc/resume_surawoot_krajangthong.pdf" class="btn btn-secondary" target="_blank"><span
+              data-i18n="btn_resume">Resume</span> <i class="bi bi-arrow-down-circle"></i></a>
         </div>
       </div>
     </section>
 
-  </main><!-- End #main -->
+    <!-- Bento Grid About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="bento-grid">
 
+          <!-- Profile Card -->
+          <div class="bento-card card-bio" data-aos="fade-up" data-aos-delay="100">
+            <div class="profile-flex">
+              <img src="assets/img/Dodo-profile2.png" alt="Profile" class="profile-img">
+              <div>
+                <h3 data-i18n="about_title">About Me</h3>
+                <p data-i18n="about_desc">I'm a seasoned System Engineer with over 8 years of specialized experience in
+                  Linux, Cloud Telephony
+                  (3CX/Genesys), and Virtualization (VMware). I focus on optimizing performance, streamlining processes,
+                  and delivering seamless communication solutions.</p>
+              </div>
+            </div>
+          </div>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+          <!-- Stats Card -->
+          <div class="bento-card card-stats" data-aos="fade-up" data-aos-delay="200">
+            <h3 data-i18n="edu_title">Education</h3>
+            <p style="font-weight: 500; color: var(--text-primary);" data-i18n="edu_degree">Bachelor of Engineering</p>
+            <p>KMUTT (Aug 2013 – Jan 2017)</p>
+            <hr style="border:0; border-top:1px solid #eee; margin: 16px 0;">
+            <p style="font-size: 14px;" data-i18n="edu_major">Electronic & Telecommunication</p>
+          </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        </div>
+      </div>
+    </section>
 
+    <!-- Experience Timeline -->
+    <section id="experience" class="section" style="background: white;"> <!-- White background section break -->
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-i18n="exp_title">Professional Journey</h2>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+        <div class="timeline">
 
+          <!-- Role 1 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Apr 2025 – Present</span>
+            <h3 class="timeline-role" data-i18n="role_senior">Senior System Engineer</h3>
+            <span class="timeline-company">Cloudsoft Co., Ltd.</span>
+            <div class="timeline-desc">
+              <ul>
+                <li>Design and support unified communications solutions using 3CX and cloud telephony.</li>
+                <li>Lead integration of PBX systems with enterprise apps and oversee virtualisation.</li>
+                <li>Guide cross-functional teams to enhance system performance and reliability.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Oct 2021 – Apr 2025</span>
+            <h3 class="timeline-role" data-i18n="role_net">Network/System Engineer</h3>
+            <span class="timeline-company">Cloudsoft Co., Ltd.</span>
+            <div class="timeline-desc">
+              <ul>
+                <li>Led IVR testing and call-flow solutions development.</li>
+                <li>Integrated Salesforce with communication systems.</li>
+                <li>Reduced 3CX deployment from 5h to 10m via Bash scripts.</li>
+                <li>Analysed SIP packets to troubleshoot network/firewall issues.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Oct 2020 – Aug 2021</span>
+            <h3 class="timeline-role" data-i18n="role_sup_noc">Support Network Engineer (NOC)</h3>
+            <span class="timeline-company">Kirz Co., Ltd.</span>
+            <div class="timeline-desc">
+              <ul>
+                <li>Monitored network operations for high availability.</li>
+                <li>Diagnosed and resolved network issues in the NOC.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 4 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Feb 2020 – Aug 2020</span>
+            <h3 class="timeline-role" data-i18n="role_net_eng">Network Engineer</h3>
+            <span class="timeline-company">Axtentel IT Hardware Maintenance</span>
+            <div class="timeline-desc">
+              <ul>
+                <li>Managed network infrastructure and hardware maintenance.</li>
+                <li>Supported hardware upgrades in telecom environments.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-i18n="skills_title">Expertise</h2>
+        <div class="bento-grid">
+
+          <div class="bento-card bento-col-4" style="grid-column: span 4;" data-aos="fade-up">
+            <i class="bi bi-cloud text-primary" style="font-size: 32px; margin-bottom: 20px; display:block;"></i>
+            <h3 data-i18n="infra_title">Infrastructure</h3>
+            <p style="margin-bottom: 20px; line-height: 1.6; font-size: 15px;" data-i18n="infra_desc">Architecting
+              robust, scalable infrastructure across hybrid cloud environments. Expertise in virtualization and
+              containerization to ensure high availability.</p>
+            <div class="skill-tags">
+              <span>Linux/Unix</span>
+              <span>VMware</span>
+              <span>Proxmox</span>
+              <span>AWS</span>
+              <span>Azure</span>
+              <span>Huawei Cloud</span>
+              <span>Docker</span>
+            </div>
+          </div>
+
+          <div class="bento-card bento-col-4" style="grid-column: span 4;" data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-telephone text-primary" style="font-size: 32px; margin-bottom: 20px; display:block;"></i>
+            <h3 data-i18n="tele_title">Telephony</h3>
+            <p style="margin-bottom: 20px; line-height: 1.6; font-size: 15px;" data-i18n="tele_desc">Delivering
+              enterprise-grade voice solutions. Specialized in designing complex call flows and managing large-scale PBX
+              systems for seamless communication.</p>
+            <div class="skill-tags">
+              <span>3CX</span>
+              <span>Asterisk</span>
+              <span>Genesys</span>
+              <span>PBX</span>
+              <span>IVR Design</span>
+              <span>SIP/VoIP</span>
+            </div>
+          </div>
+
+          <div class="bento-card bento-col-4" style="grid-column: span 4;" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-code-slash text-primary" style="font-size: 32px; margin-bottom: 20px; display:block;"></i>
+            <h3 data-i18n="dev_title">Dev & Scripts</h3>
+            <p style="margin-bottom: 20px; line-height: 1.6; font-size: 15px;" data-i18n="dev_desc">Automating workflows
+              and building backend tools to enhance operational efficiency. Bridging the gap between operations and
+              development.</p>
+            <div class="skill-tags">
+              <span>Bash Scripting</span>
+              <span>Golang</span>
+              <span>SQL</span>
+              <span>API Development</span>
+              <span>Automation</span>
+              <span>Git</span>
+            </div>
+          </div>
+
+          <div class="bento-card bento-col-6" style="grid-column: span 6;" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-clipboard-check text-primary"
+              style="font-size: 32px; margin-bottom: 20px; display:block;"></i>
+            <h3 data-i18n="tester_title">Tester / QA</h3>
+            <p style="margin-bottom: 20px; line-height: 1.6; font-size: 15px;" data-i18n="tester_desc">Ensuring software
+              reliability through rigorous testing strategies. Expertise in automated and manual testing for
+              high-quality deliverables.</p>
+            <div class="skill-tags">
+              <span>Robot Framework</span>
+              <span>Selenium</span>
+              <span>Postman</span>
+              <span>Unit Testing</span>
+              <span>Manual Testing</span>
+            </div>
+          </div>
+
+          <div class="bento-card bento-col-6" style="grid-column: span 6;" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-kanban text-primary" style="font-size: 32px; margin-bottom: 20px; display:block;"></i>
+            <h3 data-i18n="pm_title">Project Management</h3>
+            <p style="margin-bottom: 20px; line-height: 1.6; font-size: 15px;" data-i18n="pm_desc">Leading
+              cross-functional teams to deliver complex projects. Proficient in Agile methodologies and resource
+              optimization for timely success.</p>
+            <div class="skill-tags">
+              <span>Leadership</span>
+              <span>Team Management</span>
+              <span>Turnkey Projects</span>
+              <span>Project Planning</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact/Footer -->
+    <footer id="contact">
+      <div class="container text-center">
+        <h2 style="color:white; margin-bottom: 24px;" data-i18n="contact_title">Let's Connect</h2>
+        <p style="margin-bottom: 32px; color: #888;">Huay Khwang, Bangkok, Thailand</p>
+        <div style="display: flex; gap: 24px; justify-content: center; margin-bottom: 60px;">
+          <a href="mailto:dodosurawoot@outlook.com" style="font-size: 24px;"><i class="bi bi-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/k-surawoot/" style="font-size: 24px;"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/dodosurawoot" style="font-size: 24px;"><i class="bi bi-github"></i></a>
+          <a href="https://gitlab.com/dodosurawoot" style="font-size: 24px;"><i class="bi bi-gitlab"></i></a>
+          <a href="tel:+66840955107" style="font-size: 24px;"><i class="bi bi-phone"></i></a>
+        </div>
+        <p>© 2026 Surawoot Krajangthong.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true,
+      easing: 'cubic-bezier(0.25, 1, 0.5, 1)'
+    });
+
+    // Language Logic
+    const translations = {
+      en: {
+        nav_about: "About",
+        nav_exp: "Experience",
+        nav_skills: "Skills",
+        nav_contact: "Contact",
+        hero_title: "VoIP, Linux & <br>Cloud Engineering.",
+        hero_desc: "Hi, I'm Surawoot (Dodo). I’m a passionate System Engineer dedicated to crafting seamless communication ecosystems. From robust VoIP solutions to scalable cloud infrastructure, I engineer systems that are built to perform and designed to scale.",
+        btn_work: "My Work",
+        btn_resume: "Resume",
+        about_title: "About Me",
+        about_desc: "I'm a seasoned System Engineer with over 8 years of specialized experience in Linux, Cloud Telephony (3CX/Genesys), and Virtualization (VMware). I focus on optimizing performance, streamlining processes, and delivering seamless communication solutions.",
+        edu_title: "Education",
+        edu_degree: "Bachelor of Engineering",
+        edu_major: "Electronic & Telecommunication",
+        exp_title: "Professional Journey",
+        role_senior: "Senior System Engineer",
+        role_net: "Network/System Engineer",
+        role_sup_noc: "Support Network Engineer (NOC)",
+        role_net_eng: "Network Engineer",
+        skills_title: "Expertise",
+        contact_title: "Let's Connect",
+        footer_desc: "Designed with Apple Aesthetic.",
+        infra_title: "Infrastructure",
+        infra_desc: "Architecting robust, scalable infrastructure across hybrid cloud environments. Expertise in virtualization and containerization to ensure high availability.",
+        tele_title: "Telephony",
+        tele_desc: "Delivering enterprise-grade voice solutions. Specialized in designing complex call flows and managing large-scale PBX systems for seamless communication.",
+        dev_title: "Dev & Scripts",
+        dev_desc: "Automating workflows and building backend tools to enhance operational efficiency. Bridging the gap between operations and development.",
+        tester_title: "Tester / QA",
+        tester_desc: "Ensuring software reliability through rigorous testing strategies. Expertise in automated and manual testing for high-quality deliverables.",
+        pm_title: "Project Management",
+        pm_desc: "Leading cross-functional teams to deliver complex projects. Proficient in Agile methodologies and resource optimization for timely success."
+      },
+      th: {
+        nav_about: "เกี่ยวกับฉัน",
+        nav_exp: "ประสบการณ์",
+        nav_skills: "ทักษะ",
+        nav_contact: "ติดต่อ",
+        hero_title: "วิศวกร VoIP, Linux <br>และคลาวด์",
+        hero_desc: "สวัสดีครับ ผมสุรวุฒิ (โด้) วิศวกรระบบผู้มุ่งมั่นในการสร้างระบบสื่อสารที่ไร้รอยต่อ จากโซลูชัน VoIP ที่เสถียรสู่โครงสร้างพื้นฐานคลาวด์ที่รองรับการเติบโต ผมออกแบบระบบที่เน้นประสิทธิภาพและความน่าเชื่อถือสูงสุด",
+        btn_work: "ผลงานของผม",
+        btn_resume: "เรซูเม่",
+        about_title: "เกี่ยวกับฉัน",
+        about_desc: "ผมเป็น System Engineer ที่มีประสบการณ์กว่า 8 ปี เชี่ยวชาญด้าน Linux, Cloud Telephony (3CX/Genesys), และ Virtualization (VMware) ผมมุ่งเน้นการเพิ่มประสิทธิภาพระบบ ลดขั้นตอนการทำงาน และส่งมอบโซลูชันการสื่อสารที่ราบรื่น",
+        edu_title: "การศึกษา",
+        edu_degree: "ปริญญาตรี วิศวกรรมศาสตร์",
+        edu_major: "วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม",
+        exp_title: "เส้นทางการทำงาน",
+        role_senior: "วิศวกรระบบอาวุโส",
+        role_net: "วิศวกรเครือข่าย/ระบบ",
+        role_sup_noc: "วิศวกรสนับสนุนเครือข่าย (NOC)",
+        role_net_eng: "วิศวกรเครือข่าย",
+        skills_title: "ความเชี่ยวชาญ",
+        contact_title: "ติดต่อเรา",
+        footer_desc: "ออกแบบด้วยสไตล์ Apple Aesthetic",
+        infra_title: "โครงสร้างพื้นฐาน",
+        infra_desc: "ออกแบบโครงสร้างพื้นฐานที่แข็งแกร่งและรองรับการขยายตัวบนสภาพแวดล้อม Hybrid Cloud เชี่ยวชาญด้าน Virtualization และ Containerization เพื่อความเสถียรสูงสุด",
+        tele_title: "ระบบโทรศัพท์",
+        tele_desc: "ส่งมอบโซลูชันระบบเสียงระดับองค์กร เชี่ยวชาญการออกแบบ Call Flow ที่ซับซ้อนและบริหารจัดการระบบ PBX ขนาดใหญ่เพื่อการสื่อสารที่ไร้รอยต่อ",
+        dev_title: "การพัฒนา & สคริปต์",
+        dev_desc: "พัฒนาระบบอัตโนมัติและเครื่องมือ Backend เพื่อเพิ่มประสิทธิภาพการดำเนินงาน เชื่อมช่องว่างระหว่าง Operations และ Development",
+        tester_title: "ผู้ทดสอบระบบ (QA)",
+        tester_desc: "รับประกันความเสถียรของซอฟต์แวร์ผ่านกลยุทธ์การทดสอบที่เข้มงวด เชี่ยวชาญทั้งการทดสอบแบบอัตโนมัติและแบบ Manual เพื่อผลงานคุณภาพสูง",
+        pm_title: "การบริหารโครงการ",
+        pm_desc: "นำทีมข้ามสายงานเพื่อส่งมอบโปรเจกต์ที่ซับซ้อน เชี่ยวชาญใน Agile Methodologies และการบริหารทรัพยากรเพื่อความสำเร็จตามกำหนดเวลา"
+      }
+    };
+
+    const langBtn = document.getElementById('langBtn');
+    let currentLang = 'en';
+
+    langBtn.addEventListener('click', () => {
+      // Toggle Language
+      currentLang = currentLang === 'en' ? 'th' : 'en';
+
+      // Update Button State
+      if (currentLang === 'th') {
+        langBtn.classList.add('active-th');
+      } else {
+        langBtn.classList.remove('active-th');
+      }
+
+      // Apply translations
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.innerHTML = translations[currentLang][key]; // innerHTML to support <br>
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
