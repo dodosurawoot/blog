@@ -479,68 +479,193 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Resume
+# Resume (Timeline)
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Resume Cards
---------------------------------------------------------------*/
-.resume .resume-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  /* Very subtle shadow initially */
-  border-left: 5px solid var(--primary-color);
-  transition: all 0.3s ease;
-  margin-bottom: 30px;
+.resume .timeline {
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.resume .resume-card:hover {
+/* The vertical line */
+.resume .timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #eef2ff;
+  /* Light indigo line */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+/* Container around content */
+.resume .timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* The circle on the line */
+.resume .timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: #fff;
+  border: 4px solid var(--primary-color);
+  top: 24px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.resume .timeline-item:hover::after {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Place items to the left */
+.resume .left {
+  left: 0;
+}
+
+/* Place items to the right */
+.resume .right {
+  left: 50%;
+}
+
+/* Fix the circle for containers on the right side */
+.resume .right::after {
+  left: -10px;
+}
+
+/* The actual content box */
+.resume .timeline-content {
+  padding: 30px;
+  background: #fff;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  /* Slate 200 light */
+}
+
+.resume .timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(99, 102, 241, 0.3);
+  /* Primary color fade */
 }
 
-.resume .resume-title {
-  font-size: 26px;
+/* Typography in Timeline */
+.resume .timeline-content h2 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
   font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 20px;
   color: var(--heading-color);
 }
 
-.resume .resume-item {
-  padding: 0;
-  margin: 0;
-  border-left: none;
-  /* Remove old border */
-  position: relative;
-}
-
-.resume .resume-item h4 {
-  line-height: 1.2;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: capitalize;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.resume .resume-item h5 {
-  font-size: 14px;
-  background: #eef2ff;
-  color: var(--primary-color);
-  padding: 6px 12px;
-  display: inline-block;
+.resume .timeline-content h4 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 12px;
+  color: var(--primary-color);
+  background: #eef2ff;
+  display: inline-block;
+  padding: 4px 12px;
   border-radius: 20px;
 }
 
-.resume .resume-item::before {
-  display: none;
-  /* Remove old dot */
+.resume .timeline-content p {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #475569;
+  /* Slate 600 */
+}
+
+.resume .timeline-content ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.resume .timeline-content ul li {
+  padding-bottom: 8px;
+  color: #475569;
+}
+
+.resume .timeline-content .date {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  /* Slate 500 */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Icon in the box */
+.resume .timeline-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 24px;
+  color: #cbd5e1;
+  /* Light gray icon */
+  opacity: 0.5;
+}
+
+.resume .timeline-content:hover .timeline-icon {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+
+/* Media queries - Responsive timeline */
+@media screen and (max-width: 768px) {
+
+  /* Place the timelime to the left */
+  .resume .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .resume .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure all containers are on the right relative to the line */
+  .resume .timeline-item::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .resume .left::after,
+  .resume .right::after {
+    left: 21px;
+  }
+
+  /* Make all right containers behave like the right side */
+  .resume .right {
+    left: 0%;
+  }
+
+  .resume .timeline-content .date {
+    display: block;
+    margin-top: -5px;
+  }
 }
 
 /*--------------------------------------------------------------
