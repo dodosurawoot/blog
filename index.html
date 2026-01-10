@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surawoot | System Engineer</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <title>Surawoot blog</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +30,7 @@
           <a href="#about" data-i18n="nav_about">About</a>
           <a href="#experience" data-i18n="nav_exp">Experience</a>
           <a href="#skills" data-i18n="nav_skills">Skills</a>
+          <a href="#certification" data-i18n="nav_certification">Certification</a>
           <a href="#contact" data-i18n="nav_contact">Contact</a>
         </div>
 
@@ -46,7 +48,7 @@
     <!-- Hero Section -->
     <section class="hero" data-aos="fade-up">
       <div class="container">
-        <h1 data-i18n="hero_title">VoIP, Linux & <br>Cloud Engineering.</h1>
+        <h1 data-i18n="hero_title">Linux, VoIP & <br>Cloud Engineering.</h1>
         <p style="max-width: 700px; margin: 0 auto 32px; color: var(--text-secondary); line-height: 1.6;"
           data-i18n="hero_desc">Hi, I'm Surawoot (Dodo). I’m a passionate System Engineer dedicated to crafting seamless
           communication ecosystems. From robust VoIP solutions to scalable cloud infrastructure, I engineer systems that
@@ -81,10 +83,11 @@
           <!-- Stats Card -->
           <div class="bento-card card-stats" data-aos="fade-up" data-aos-delay="200">
             <h3 data-i18n="edu_title">Education</h3>
-            <p style="font-weight: 500; color: var(--text-primary);" data-i18n="edu_degree">Bachelor of Engineering</p>
-            <p>KMUTT (Aug 2013 – Jan 2017)</p>
+            <p style="font-weight: 500; color: var(--text-primary);" data-i18n="edu_degree">King Mongkut's University of
+              Technology Thonburi</p>
+            <p>Bachelor of Technology (Industrial Technology)</p>
             <hr style="border:0; border-top:1px solid #eee; margin: 16px 0;">
-            <p style="font-size: 14px;" data-i18n="edu_major">Electronic & Telecommunication</p>
+            <p style="font-size: 14px;" data-i18n="edu_major">Industrial Technology Electronics and Telecommunication
           </div>
 
         </div>
@@ -250,21 +253,51 @@
       </div>
     </section>
 
+    <!-- Certification -->
+    <section id="certification" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="cert_title" data-aos="fade-up">Certification</h2>
+        <div class="cert-grid">
+          <div class="cert-card" onclick="openCertModal(this)" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/certificate/Cert-1.png" alt="Certification 1">
+          </div>
+          <div class="cert-card" onclick="openCertModal(this)" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/certificate/Cert-5.png" alt="Certification 5">
+          </div>
+          <div class="cert-card" onclick="openCertModal(this)" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/img/certificate/Cert-2.png" alt="Certification 2">
+          </div>
+          <div class="cert-card" onclick="openCertModal(this)" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/img/certificate/Cert-3.png" alt="Certification 3">
+          </div>
+          <div class="cert-card" onclick="openCertModal(this)" data-aos="fade-up" data-aos-delay="500">
+            <img src="assets/img/certificate/Cert-4.png" alt="Certification 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact/Footer -->
     <footer id="contact">
       <div class="container text-center">
         <h2 style="color:white; margin-bottom: 24px;" data-i18n="contact_title">Let's Connect</h2>
         <p style="margin-bottom: 32px; color: #888;">Huay Khwang, Bangkok, Thailand</p>
         <div style="display: flex; gap: 24px; justify-content: center; margin-bottom: 60px;">
-          <a href="mailto:dodosurawoot@outlook.com" style="font-size: 24px;"><i class="bi bi-envelope"></i></a>
           <a href="https://www.linkedin.com/in/k-surawoot/" style="font-size: 24px;"><i class="bi bi-linkedin"></i></a>
           <a href="https://github.com/dodosurawoot" style="font-size: 24px;"><i class="bi bi-github"></i></a>
           <a href="https://gitlab.com/dodosurawoot" style="font-size: 24px;"><i class="bi bi-gitlab"></i></a>
+          <a href="mailto:dodosurawoot@outlook.com" style="font-size: 24px;"><i class="bi bi-envelope"></i></a>
           <a href="tel:+66840955107" style="font-size: 24px;"><i class="bi bi-phone"></i></a>
         </div>
-        <p>© 2026 Surawoot Krajangthong.</p>
+        <p>© 2025 Surawoot Krajangthong.</p>
       </div>
     </footer>
+
+    <!-- Certification Modal -->
+    <div id="certModal" class="cert-modal" onclick="closeCertModal()">
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="modalImg">
+    </div>
 
   </main>
 
@@ -284,6 +317,7 @@
         nav_about: "About",
         nav_exp: "Experience",
         nav_skills: "Skills",
+        nav_certification: "Certification",
         nav_contact: "Contact",
         hero_title: "VoIP, Linux & <br>Cloud Engineering.",
         hero_desc: "Hi, I'm Surawoot (Dodo). I’m a passionate System Engineer dedicated to crafting seamless communication ecosystems. From robust VoIP solutions to scalable cloud infrastructure, I engineer systems that are built to perform and designed to scale.",
@@ -311,12 +345,24 @@
         tester_title: "Tester / QA",
         tester_desc: "Ensuring software reliability through rigorous testing strategies. Expertise in automated and manual testing for high-quality deliverables.",
         pm_title: "Project Management",
-        pm_desc: "Leading cross-functional teams to deliver complex projects. Proficient in Agile methodologies and resource optimization for timely success."
+        pm_desc: "Leading cross-functional teams to deliver complex projects. Proficient in Agile methodologies and resource optimization for timely success.",
+        cert_title: "Certification",
+        cert1_title: "Certification 1",
+        cert1_desc: "Description of Certification 1",
+        cert2_title: "Certification 2",
+        cert2_desc: "Description of Certification 2",
+        cert3_title: "Certification 3",
+        cert3_desc: "Description of Certification 3",
+        cert4_title: "Certification 4",
+        cert4_desc: "Description of Certification 4",
+        cert5_title: "Certification 5",
+        cert5_desc: "Description of Certification 5"
       },
       th: {
         nav_about: "เกี่ยวกับฉัน",
         nav_exp: "ประสบการณ์",
         nav_skills: "ทักษะ",
+        nav_certification: "ใบรับรอง",
         nav_contact: "ติดต่อ",
         hero_title: "วิศวกร VoIP, Linux <br>และคลาวด์",
         hero_desc: "สวัสดีครับ ผมสุรวุฒิ (โด้) วิศวกรระบบผู้มุ่งมั่นในการสร้างระบบสื่อสารที่ไร้รอยต่อ จากโซลูชัน VoIP ที่เสถียรสู่โครงสร้างพื้นฐานคลาวด์ที่รองรับการเติบโต ผมออกแบบระบบที่เน้นประสิทธิภาพและความน่าเชื่อถือสูงสุด",
@@ -344,7 +390,18 @@
         tester_title: "ผู้ทดสอบระบบ (QA)",
         tester_desc: "รับประกันความเสถียรของซอฟต์แวร์ผ่านกลยุทธ์การทดสอบที่เข้มงวด เชี่ยวชาญทั้งการทดสอบแบบอัตโนมัติและแบบ Manual เพื่อผลงานคุณภาพสูง",
         pm_title: "การบริหารโครงการ",
-        pm_desc: "นำทีมข้ามสายงานเพื่อส่งมอบโปรเจกต์ที่ซับซ้อน เชี่ยวชาญใน Agile Methodologies และการบริหารทรัพยากรเพื่อความสำเร็จตามกำหนดเวลา"
+        pm_desc: "นำทีมข้ามสายงานเพื่อส่งมอบโปรเจกต์ที่ซับซ้อน เชี่ยวชาญใน Agile Methodologies และการบริหารทรัพยากรเพื่อความสำเร็จตามกำหนดเวลา",
+        cert_title: "ใบรับรอง",
+        cert1_title: "ใบรับรอง 1",
+        cert1_desc: "รายละเอียดใบรับรอง 1",
+        cert2_title: "ใบรับรอง 2",
+        cert2_desc: "รายละเอียดใบรับรอง 2",
+        cert3_title: "ใบรับรอง 3",
+        cert3_desc: "รายละเอียดใบรับรอง 3",
+        cert4_title: "ใบรับรอง 4",
+        cert4_desc: "รายละเอียดใบรับรอง 4",
+        cert5_title: "ใบรับรอง 5",
+        cert5_desc: "รายละเอียดใบรับรอง 5"
       }
     };
 
@@ -370,6 +427,29 @@
         }
       });
     });
+
+    // Certification Modal Logic
+    const modal = document.getElementById('certModal');
+    const modalImg = document.getElementById('modalImg');
+
+    function openCertModal(card) {
+      const img = card.querySelector('img');
+      modal.style.display = "flex";
+      // Force reflow for transition
+      void modal.offsetWidth;
+      modal.classList.add('active');
+
+      modalImg.src = img.src;
+      modalImg.style.transform = "scale(1)";
+    }
+
+    function closeCertModal() {
+      modal.classList.remove('active');
+      setTimeout(() => {
+        modal.style.display = "none";
+        modalImg.src = "";
+      }, 300); // Match transition duration
+    }
   </script>
 </body>
 
