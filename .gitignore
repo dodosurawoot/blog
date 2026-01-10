@@ -1,1 +1,22 @@
+# Dependencies
 node_modules/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build/Dist (if used later)
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
