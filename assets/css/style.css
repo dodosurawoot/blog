@@ -471,8 +471,11 @@ h4 {
 }
 
 .cert-card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 0;
+  color: var(--text-primary);
 }
 
 .cert-card p {
