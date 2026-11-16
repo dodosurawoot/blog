@@ -2,7 +2,7 @@
 (function(){
 "use strict";
 var cfg=window.BIOLAB_FIREBASE_CONFIG,ready=!!(cfg&&cfg.apiKey&&cfg.projectId&&cfg.authDomain&&cfg.appId&&window.firebase);
-var auth,db,user=null,admin=false,attempts=[],adminID=String(window.BIOLAB_ADMIN_GITHUB_ID||"19434459");
+var auth,db,user=null,admin=false,attempts=[],saving=false,adminID=String(window.BIOLAB_ADMIN_GITHUB_ID||"19434459");
 var $=id=>document.getElementById(id);
 window.bioLabConfigured=ready;
 function status(s,bad){if($("cloudStatus")){$("cloudStatus").textContent=s;$("cloudStatus").style.color=bad?"#b44747":"#5e7477"}}
@@ -24,11 +24,24 @@ $("countAttempts").textContent=attempts.length;$("countStudents").textContent=ne
 $("meanScore").textContent=attempts.length?(attempts.reduce((s,a)=>s+(a.scoreX10||0),0)/attempts.length/10).toFixed(1):"—";
 $("latestDate").textContent=attempts.length?displayDate(attempts[0].submittedAt):"—";
 }
+
+async function ownHistory(){
+if(!user)return;show("history");
+var target=$("myAttempts");target.replaceChildren();status("กำลังโหลดประวัติคะแนน...");
+try{
+var data=await db.collection("attempts").where("uid","==",user.uid).get();
+var rows=data.docs.map(d=>d.data()).sort((a,b)=>(b.submittedAt?.toMillis?.()||0)-(a.submittedAt?.toMillis?.()||0));
+if(!rows.length){var r=document.createElement("tr"),c=makeCell("ยังไม่เคยบันทึกผลสอบ");c.colSpan=5;r.appendChild(c);target.appendChild(r)}
+rows.forEach(a=>{var tr=document.createElement("tr");[displayDate(a.submittedAt),score(a)+" /100",a.answeredCount+"/40",Math.round(a.durationSeconds/60)+" นาที",a.autoSubmitted?"หมดเวลา":"ส่งเอง"].forEach(v=>tr.appendChild(makeCell(v)));target.appendChild(tr)});
+status("พบประวัติของคุณ "+rows.length+" ครั้ง")
+}catch(e){status("โหลดประวัติไม่สำเร็จ: "+err(e),true)}
+}
+
 async function dashboard(){if(!admin)return;show("dashboard");status("กำลังโหลดประวัติการสอบ...");
 try{var snap=await db.collection("attempts").get();attempts=snap.docs.map(d=>Object.assign({id:d.id},d.data()));attempts.sort((a,b)=>(b.submittedAt?.toMillis?.()||0)-(a.submittedAt?.toMillis?.()||0));render();status("โหลดข้อมูลผลสอบ "+attempts.length+" ครั้งแล้ว")}catch(e){status("โหลด Dashboard ไม่สำเร็จ: "+err(e),true)}}
 async function save(){
-if(!ready||!user)return;var a=window.bioLabGetFinishedAttempt?.();if(!a||a.cloudSaved||a.userUid!==user.uid)return;
-try{status("กำลังบันทึกคะแนนลงฐานข้อมูล...");var ref=db.collection("attempts").doc(user.uid+"_"+a.startAt);
+if(saving||!ready||!user)return;var a=window.bioLabGetFinishedAttempt?.();if(!a||a.cloudSaved||a.userUid!==user.uid)return;
+saving=true;try{status("กำลังบันทึกคะแนนลงฐานข้อมูล...");var ref=db.collection("attempts").doc(user.uid+"_"+a.startAt);
 var old=await ref.get();if(!old.exists)await ref.set({
 uid:user.uid,name:(user.displayName||"").slice(0,100),email:(user.email||"").slice(0,254),
 examId:"biology-mock-2570-v1",scoreX10:Math.round(a.score*10),categoryX10:Object.fromEntries(Object.entries(a.categoryScores).map(([k,v])=>[k,Math.round(v*10)])),
@@ -36,12 +49,12 @@ answeredCount:a.answeredCount,durationSeconds:Math.min(5400,Math.max(0,Math.floo
 autoSubmitted:!!a.timedOut,submittedAt:firebase.firestore.FieldValue.serverTimestamp()
 });
 window.bioLabMarkCloudSaved?.();status("✅ บันทึกคะแนนบน Cloud เรียบร้อย");
-}catch(e){status("บันทึกคะแนนไม่สำเร็จ: "+err(e),true)}
+}catch(e){status("บันทึกคะแนนไม่สำเร็จ: "+err(e),true)}finally{saving=false}
 }
 window.bioLabSaveAttempt=save;
 $("googleLogin").onclick=()=>login("google");$("githubLogin").onclick=()=>login("github");
 $("signOutBtn").onclick=()=>auth&&auth.signOut();
-$("openAdmin").onclick=dashboard;$("refreshAdmin").onclick=dashboard;$("backHome").onclick=()=>show("home");
+$("openAdmin").onclick=dashboard;$("openHistory").onclick=ownHistory;$("backFromHistory").onclick=()=>show("home");$("refreshAdmin").onclick=dashboard;$("backHome").onclick=()=>show("home");
 $("adminSearch").oninput=render;
 $("exportAdmin").onclick=()=>{
 if(!admin)return;
@@ -58,7 +71,7 @@ auth.onAuthStateChanged(async u=>{
 user=u;admin=false;window.bioLabCurrentUser=u;
 if(u){try{admin=adminCheck(u,await u.getIdTokenResult())}catch(e){status(err(e),true)}}
 window.bioLabAdmin=admin;
-toggle("googleLogin",!u);toggle("githubLogin",!u);toggle("signOutBtn",!!u);toggle("signedProfile",!!u);toggle("openAdmin",admin);
+toggle("googleLogin",!u);toggle("githubLogin",!u);toggle("signOutBtn",!!u);toggle("signedProfile",!!u);toggle("openAdmin",admin);toggle("openHistory",!!u);
 if(u){$("signedProfile").textContent=(admin?"Admin: ":"ผู้สอบ: ")+(u.displayName||u.email||u.uid);status("เข้าสู่ระบบแล้ว "+(u.email||""));}else{status("เข้าสู่ระบบ Google เพื่อเก็บผลสอบทุกครั้ง");show("home")}
 window.bioLabAuthChanged?.();
 if(u)save();
