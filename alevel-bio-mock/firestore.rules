@@ -8,6 +8,9 @@ service cloud.firestore {
         && 'github.com' in request.auth.token.firebase.identities
         && request.auth.token.firebase.identities['github.com'].hasAny(['19434459']);
     }
+    function validCategory(value) {
+      return value is int && value >= 0 && value <= 1000;
+    }
     function validAttempt() {
       return request.auth != null
         && request.auth.uid == request.resource.data.uid
@@ -37,7 +40,13 @@ service cloud.firestore {
         && request.resource.data.autoSubmitted is bool
         && request.resource.data.submittedAt == request.time
         && request.resource.data.categoryX10 is map
-        && request.resource.data.categoryX10.keys().hasOnly(['eco','cell','human','plant','gene']);
+        && request.resource.data.categoryX10.keys().hasAll(['eco','cell','human','plant','gene'])
+        && request.resource.data.categoryX10.keys().hasOnly(['eco','cell','human','plant','gene'])
+        && validCategory(request.resource.data.categoryX10.eco)
+        && validCategory(request.resource.data.categoryX10.cell)
+        && validCategory(request.resource.data.categoryX10.human)
+        && validCategory(request.resource.data.categoryX10.plant)
+        && validCategory(request.resource.data.categoryX10.gene);
     }
     match /attempts/{attemptId} {
       allow get, list: if isAdmin()
