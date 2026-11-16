@@ -42,12 +42,12 @@ try{var snap=await db.collection("attempts").get();attempts=snap.docs.map(d=>Obj
 async function save(){
 if(saving||!ready||!user)return;var a=window.bioLabGetFinishedAttempt?.();if(!a||a.cloudSaved||a.userUid!==user.uid)return;
 saving=true;try{status("กำลังบันทึกคะแนนลงฐานข้อมูล...");var ref=db.collection("attempts").doc(user.uid+"_"+a.startAt);
-var old=await ref.get();if(!old.exists)await ref.set({
+try{await ref.set({
 uid:user.uid,name:(user.displayName||"").slice(0,100),email:(user.email||"").slice(0,254),
 examId:"biology-mock-2570-v1",scoreX10:Math.round(a.score*10),categoryX10:Object.fromEntries(Object.entries(a.categoryScores).map(([k,v])=>[k,Math.round(v*10)])),
 answeredCount:a.answeredCount,durationSeconds:Math.min(5400,Math.max(0,Math.floor((a.endAt-a.startAt)/1000))),
 autoSubmitted:!!a.timedOut,submittedAt:firebase.firestore.FieldValue.serverTimestamp()
-});
+});}catch(writeError){var existing;try{existing=await ref.get()}catch(readError){throw writeError}if(!existing.exists)throw writeError}
 window.bioLabMarkCloudSaved?.();status("✅ บันทึกคะแนนบน Cloud เรียบร้อย");
 }catch(e){status("บันทึกคะแนนไม่สำเร็จ: "+err(e),true)}finally{saving=false}
 }
